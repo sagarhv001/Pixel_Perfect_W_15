@@ -1,0 +1,288 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carbon Footprint Calculator</title>
+
+  <script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+	<link href="{% static 'css/single.css' %}" rel='stylesheet' type='text/css' />
+	<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+	<link href="{% static 'css/fontawesome-all.css' %}" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+	    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/87f7aa2b39.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  {% include 'header.html' %}
+
+  <form action="{% url 'calculate_carbon_emission' %}" method="POST">
+	{% csrf_token %}
+
+	<!-- {{energy_emission}}
+	{{travel_emission}}
+	{{food_emission}}
+	{{appliance_emission}}
+	{{water_emission}}
+	{{waste_emission}} -->
+
+	<div style="display: flex; align-items: center; flex-direction: row; flex-wrap: wrap;justify-content: space-around;">
+  
+	<!-- Energy usage -->
+	<section class="main-content-w3layouts-agileits">
+		<div class="container">
+				<h3 class="tittle">Energy Usage</h3>
+				<div class="row inner-sec">
+					<div class="login p-5 bg-light mx-auto mw-100">
+
+					<div>
+						<label for="electricityUsage">Electricity Usage (kWh per day):</label>
+					<input type="number" id="electricityUsage" name="electricityUsage" step="0.01"><br>
+					</div>
+
+					<div>
+						<label for="oilUsage">Petrol Usage (liters per day):</label>
+						<input type="number" id="oilUsage" name="oilUsage" step="0.01"><br>
+					</div>
+
+					<div>
+						<label for="gasUsage">CNG Usage (cubic meters per day):</label>
+					<input type="number" id="gasUsage" name="gasUsage" step="0.01"><br>
+					</div>
+			
+
+				<label for="lpgUsage">LPG Usage (liters per day):</label>
+				<input type="number" id="lpgUsage" name="lpgUsage" step="0.01"><br>
+
+		</div>
+		</div>
+	</div>
+	</section>
+
+	<!-- Travel Emission -->
+	<section class="main-content-w3layouts-agileits">
+		<div class="container">
+				<h3 class="tittle">Travel emission</h3>
+				<div class="row inner-sec">
+					<div class="login p-5 bg-light mx-auto mw-100">
+		
+                        <label for="transportMode">Mode of Transport:</label>
+                        <select id="transportMode" name="transportMode">
+                          <option value="car">Car</option>
+                          <option value="publicTransport">Public Transport</option>
+                          <option value="bicycle">Bicycle</option>
+                        </select><br>
+                    
+                        <label for="vehicleMileage">Mileage of Vehicle (miles per day):</label>
+                        <input type="number" id="vehicleMileage" name="vehicleMileage" step="0.01"><br>
+                    
+                        <label for="vehicleCC">Vehicle CC:</label>
+                        <input type="number" id="vehicleCC" name="vehicleCC"><br>
+                    
+                        <label for="distanceTravelled">Distance Travelled (miles per day):</label>
+                        <input type="number" id="distanceTravelled" name="distanceTravelled" step="0.01"><br>
+                    
+						 
+		</div>
+		</div>
+	</div>
+	</section>
+
+	<!-- Dietary choices -->
+    <section class="main-content-w3layouts-agileits">
+		<div class="container">
+				<h3 class="tittle">Dietary choices</h3>
+				<div class="row inner-sec">
+					<div class="login p-5 bg-light mx-auto mw-100">
+					
+                        <label for="">Are you a meat Eater ?</label>
+                        <select  name="meatEater">
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option> 
+                        </select><br>
+                        <label for="mealsPerDay">How many meals per day:</label>
+                        <input type="number" id="mealsPerDay" name="mealsPerDay" step="1"><br>                
+						  
+		</div>
+		</div>
+	</div>
+	</section>
+
+	<!-- Household -->
+	<section class="main-content-w3layouts-agileits">
+		<div class="container">
+				<h3 class="tittle">Household</h3>
+				<div class="row inner-sec">
+					<div class="login p-5 bg-light mx-auto mw-100">
+						<!-- New field for calculating total hours of appliance usage -->
+						<label for="totalApplianceHours">Total Hours of Appliance Usage per Day:</label>
+						<input type="text" id="totalApplianceHours" name="totalApplianceHours">
+						<br>
+						<label for="applianceUsage">Energy Efficiency of Home Appliances (1-10 scale):</label>
+						<input type="text" id="applianceUsage" name="applianceUsage">
+						<br>
+						<label for="waterConsumption">Daily Water Consumption (liters):</label>
+						<input type="text" id="waterConsumption" name="waterConsumption">
+						<br>
+						<label for="wasteProduced">Type and Quantity of Waste Produced (kg per week):</label>
+						<input type="text" id="wasteProduced" name="wasteProduced">
+						<br>
+						
+		</div>
+		</div>
+	</div>
+	</section>
+
+	</div>
+
+
+	<center>
+		<div> <button type="submit">Calculate Carbon Footprint</button></div>
+		<h3>{{ msg1 }}</h3>
+		{{ msg2 }}
+	</center>
+
+</form>
+
+<!-- popup for showing result -->
+	<!--/main-->
+	<!-- <section class="main-content-w3layouts-agileits">
+		<div class="container">
+				<div class="inner-sec">
+			<div class="login p-5 bg-light mx-auto mw-100">
+				<img src="{% static 'images/achievement.jpg' %}" alt="">
+		
+					</div>
+			</div>
+		</div>
+	</section> -->
+	<!--//main-->
+
+
+  {% include 'footer.html' %}
+
+
+  	<!-- js -->
+	<script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+	<!-- //js -->
+	<!-- desoslide-JavaScript -->
+	<script src="{% static 'js/jquery.desoslide.js' %}"></script>
+	<script>
+		$('#demo1_thumbs').desoSlide({
+			main: {
+				container: '#demo1_main_image',
+				cssClass: 'img-responsive'
+			},
+			effect: 'sideFade',
+			caption: true
+		});
+	</script>
+
+	<!-- requried-jsfiles-for owl -->
+	<script>
+		$(window).load(function () {
+			$("#flexiselDemo1").flexisel({
+				visibleItems: 3,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script>
+		$(window).load(function () {
+			$("#flexiselDemo2").flexisel({
+				visibleItems: 3,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script src="{% static 'js/jquery.flexisel.js' %}"></script>
+	<!-- //password-script -->
+	<!--/ start-smoth-scrolling -->
+	<script src="{% static 'js/move-top.js' %}"></script>
+	<script src="{% static 'js/easing.js' %}"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 900);
+			});
+		});
+	</script>
+	<!--// end-smoth-scrolling -->
+
+	<script>
+		$(document).ready(function () {
+			
+									var defaults = {
+							  			containerID: 'toTop', // fading element id
+										containerHoverID: 'toTopHover', // fading element hover id
+										scrollSpeed: 1200,
+										easingType: 'linear' 
+							 		};
+									
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<a href="#home" class="scroll" id="toTop" style="display: block;">
+		<span id="toTopHover" style="opacity: 1;"> </span>
+	</a>
+
+	<!-- //Custom-JavaScript-File-Links -->
+	<script src="{% static 'js/bootstrap.js' %}"></script>
+
+</body>
+</html>

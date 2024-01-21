@@ -1,0 +1,411 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>PixelPerfect</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="PixelPerfect" />
+
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="{% static 'css/jquery.desoslide.css' %}">
+	<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+	<link href="{% static 'css/fontawesome-all.css' %}" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+	    rel="stylesheet">
+		<script src="https://kit.fontawesome.com/87f7aa2b39.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	
+	{% include 'header.html' %}
+	<!--/banner-->
+	<div class="banner">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<div class="carousel-item active">
+					<div class="carousel-caption">
+						<h3>Create the lifestyle
+							<span>you desire</span>
+						</h3>
+						<h1>United Nations General Assembly adopted 17 sustainable development goals designed to transform our world by 2030.</h1>
+						<div class="read">
+							<a href="https://www.iisd.org/articles/insight/ending-canada-support-fossil-fuels" class="btn btn-primary read-m" target="_blank">Read More</a>
+						</div>
+						<br>
+						
+					</div>
+				</div>
+				<div class="carousel-item item2">
+					<div class="carousel-caption">
+						<h3>Engaging Purposeful
+							<span>and Creative</span>
+						</h3>
+						<h1>The great fear climate scientists have is
+							that a warming planet could create
+							feedback loops that will make everything
+							much worse.</h1>
+						<div class="read">
+							<a href="https://www.iisd.org/articles/explainer/capa-initiative-what-you-need-to-know" class="btn btn-primary read-m" target="_blank">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item item3">
+					<div class="carousel-caption">
+						<h3>Carbon emission
+							<span>everyday</span>
+						</h3>
+						<h1>The Climate Adaptation and Protected Areas Initiative: What you need to know</h1>
+						<div class="read">
+							<a href="single.html" class="btn btn-primary read-m">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item item4">
+					<div class="carousel-caption">
+						<h3>Engaging Purposeful
+							<span>and Creative</span>
+						</h3>
+						<div class="read">
+							<a href="single.html" class="btn btn-primary read-m">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	<!--/model-->
+	<!--//banner-->
+	    <br>
+		<div class="calculator">
+			<a href="{% url 'calculator' %}" class="btn btn-primary read-m">open calculator</a>
+		</div>
+	<!--/main-->
+	<section class="main-content-w3layouts-agileits">
+		<div class="container">
+			<div class="row">
+				<!--left-->
+				<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
+					<div class="blog-grid-top">
+						<div class="b-grid-top">
+							<div class="blog_info_left_grid">
+								<a href="single.html">
+									<img src="{% static 'images/b1.jpg' %}" class="img-fluid" alt="">
+								</a>
+							</div>
+							<div class="blog-info-middle">
+								<ul>
+									<li>
+										<a href="#">
+											<i class="far fa-calendar-alt"></i> FEB 15,2018</a>
+									</li>
+									<li class="mx-2">
+										<a href="#">
+											<i class="far fa-thumbs-up"></i> 201 Likes</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="far fa-comment"></i> 15 Comments</a>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+
+						<h3>
+							<a href="single.html">Amet consectetur adipisicing </a>
+						</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore et dolore magna
+							aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip exea commodo consequat duis
+							aute irudre dolor in elit sed uta labore dolore reprehender</p>
+						<a href="single.html" class="btn btn-primary read-m">Read More</a>
+					</div>
+					<!--//silder-->
+					
+
+					<!--//silder-->
+					
+				</div>
+				<!--//left-->
+				<!--right-->
+				<aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
+					<div class="right-blog-info text-left">
+						
+						
+						<div class="tech-btm">
+							<h4>Recent Posts</h4>
+							
+							<div class="blog-grids row mb-3">
+								<div class="col-md-5 blog-grid-left">
+									<a href="single.html">
+										<img src="{% static 'images/1.jpg' %}" class="img-fluid" alt="">
+									</a>
+								</div>
+								<div class="col-md-7 blog-grid-right">
+
+									<h5>
+										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									</h5>
+									<div class="sub-meta">
+										<span>
+											<i class="far fa-clock"></i> 20 Jan, 2018</span>
+									</div>
+								</div>
+								
+							</div>
+							<div class="blog-grids row mb-3">
+								<div class="col-md-5 blog-grid-left">
+									<a href="single.html">
+										<img src="{% static 'images/5.jpg' %}" class="img-fluid" alt="">
+									</a>
+								</div>
+								<div class="col-md-7 blog-grid-right">
+
+									<h5>
+										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									</h5>
+									<div class="sub-meta">
+										<span>
+											<i class="far fa-clock"></i> 20 Jan, 2018</span>
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="blog-grids row mb-3">
+								<div class="col-md-5 blog-grid-left">
+									<a href="single.html">
+										<img src="{% static 'images/3.jpg' %}" class="img-fluid" alt="">
+									</a>
+								</div>
+								<div class="col-md-7 blog-grid-right">
+									<h5>
+										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									</h5>
+									<div class="sub-meta">
+										<span>
+											<i class="far fa-clock"></i> 20 Feb, 2018</span>
+									</div>
+								</div>
+								
+							</div>
+							<div class="blog-grids row mb-3">
+								<div class="col-md-5 blog-grid-left">
+									<a href="single.html">
+										<img src="{% static 'images/2.jpg' %}" class="img-fluid" alt="">
+									</a>
+								</div>
+								<div class="col-md-7 blog-grid-right">
+
+									<h5>
+										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									</h5>
+									<div class="sub-meta">
+										<span>
+											<i class="far fa-clock"></i> 20 Jan, 2018</span>
+									</div>
+								</div>
+								
+							</div>
+							<div class="blog-grids row mb-3">
+								<div class="col-md-5 blog-grid-left">
+									<a href="single.html">
+										<img src="{% static 'images/4.jpg' %}" class="img-fluid" alt="">
+									</a>
+								</div>
+								<div class="col-md-7 blog-grid-right">
+
+									<h5>
+										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									</h5>
+									<div class="sub-meta">
+										<span>
+											<i class="far fa-clock"></i> 20 Jan, 2018</span>
+									</div>
+								</div>
+								
+							</div>
+							<div class="blog-grids row mb-3">
+								<div class="col-md-5 blog-grid-left">
+									<a href="single.html">
+										<img src="{% static 'images/6.jpg' %}" class="img-fluid" alt="">
+									</a>
+								</div>
+								<div class="col-md-7 blog-grid-right">
+									<h5>
+										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									</h5>
+									<div class="sub-meta">
+										<span>
+											<i class="far fa-clock"></i> 20 Feb, 2018</span>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+
+				</aside>
+				<!--//right-->
+			</div>
+		</div>
+	</section>
+	<!--//main-->
+	<!--/middle-->
+	
+	<!--//middle-->
+	<!---->
+	<section class="main-content-w3layouts-agileits">
+			<div class="container">
+				<div class="row">
+					<!--left-->
+					
+					<!--//left-->
+					<!--right-->
+					
+					<!--//right-->
+				</div>
+			</div>
+		</section>
+		<!--//main-->
+	
+	{% include 'footer.html' %}
+	<!-- js -->
+	<script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+	<!-- //js -->
+	<!-- desoslide-JavaScript -->
+	<script src="{% static 'js/jquery.desoslide.js' %}"></script>
+	<script>
+		$('#demo1_thumbs').desoSlide({
+			main: {
+				container: '#demo1_main_image',
+				cssClass: 'img-responsive'
+			},
+			effect: 'sideFade',
+			caption: true
+		});
+	</script>
+
+	<!-- requried-jsfiles-for owl -->
+	<script>
+		$(window).load(function () {
+			$("#flexiselDemo1").flexisel({
+				visibleItems: 3,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script>
+		$(window).load(function () {
+			$("#flexiselDemo2").flexisel({
+				visibleItems: 3,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script src="{% static 'js/jquery.flexisel.js' %}"></script>
+	<!-- //password-script -->
+	<!--/ start-smoth-scrolling -->
+	<script src="{% static 'js/move-top.js' %}"></script>
+	<script src="{% static 'js/easing.js' %}"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 900);
+			});
+		});
+	</script>
+	<!--// end-smoth-scrolling -->
+
+	<script>
+		$(document).ready(function () {
+			
+									var defaults = {
+							  			containerID: 'toTop', // fading element id
+										containerHoverID: 'toTopHover', // fading element hover id
+										scrollSpeed: 1200,
+										easingType: 'linear' 
+							 		};
+									
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<a href="#home" class="scroll" id="toTop" style="display: block;">
+		<span id="toTopHover" style="opacity: 1;"> </span>
+	</a>
+
+	<!-- //Custom-JavaScript-File-Links -->
+	<script src="{% static 'js/bootstrap.js' %}"></script>
+
+
+</body>
+
+</html>

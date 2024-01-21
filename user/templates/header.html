@@ -1,0 +1,98 @@
+{% load static%}
+
+<!--Header-->
+
+<header>
+    <div class="top-bar_sub_w3layouts container-fluid">
+        <div class="row">
+            <div class="col-md-4 logo text-left">
+                <a class="navbar-brand" href="{% url 'index' %}">
+                    <i class="fa-brands fa-pied-piper-pp" style="color: #63E6BE;"></i>
+                   Pixel_Perfect</a>
+            </div>
+
+            {% if user_data %}
+            
+                <div style="display:flex; align-items: center; justify-content: space-around; margin-left:500px">
+                 
+                <li class="nav-item" style="list-style: none">
+                    <a class="nav-link" href="{% url 'dashboard'%}">Dashboard</a>
+                </li>
+
+                <li class="nav-item" style="list-style: none">
+                    <a class="nav-link" href="{% url 'challenges'%}">Challenges</a>
+                </li>
+                
+                  <li class="nav-item" style="list-style: none">
+                    <a href="">
+                      <img src="{% static 'images/avatar.png' %}" alt="profile pic" style="width: 40px; height: 30px; border-radius: 50%;">
+                      <span aria-hidden="true"></span> {{user_data.name}}
+                    </a>
+                </li>
+
+                <li class="nav-item" style="list-style: none">
+                    <a class="nav-link" href="{% url 'logout' %}"><i class="fa-solid fa-power-off"></i> &nbsp;</i>Logout</a>
+                  </li>
+                </div>
+
+            {% else %}
+                <div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
+                    <span>Welcome</span>
+                    <span class="mx-lg-4 mx-md-2  mx-1">
+                        <a href="{% url 'login' %}">
+                            <i class="fas fa-lock"></i> Sign In</a>
+                    </span>
+                    <span>
+                        <a href="{% url 'register' %}">
+                            <i class="far fa-user"></i> Register</a>
+                    </span>
+                </div>
+            {% endif %}
+            
+            <div class="col-md-4 log-icons text-right">
+
+               
+            </div>
+        </div>
+
+    </div>
+
+        <div class="header_top" id="home">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler navbar-toggler-right mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+               </button>
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}">Home</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about'%}">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="{% url 'discover' %}" id="navbarDropdown" role="button" data-toggle="" aria-haspopup="true"
+                                aria-expanded="false">
+                                Discover
+                            </a>
+                           
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact'%}">Contact</a>
+                        </li>
+
+                    </ul>
+                       
+                    
+
+                </div>
+            </nav>
+
+        </div>
+</header>
+<!--//header-->
